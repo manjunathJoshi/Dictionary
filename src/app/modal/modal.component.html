@@ -1,0 +1,19 @@
+<form [formGroup]="wordForm">
+  <mat-form-field>
+    <input matInput placeholder="id " formControlName="id" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="word" formControlName="word" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Description" formControlName="description" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="audio url" formControlName="audio_url" />
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button (click)="Submit()" [disabled]="wordForm.invalid">Add
+        <mat-icon style="color:#780099">add</mat-icon>
+    </button>
+  </div>
+</form>

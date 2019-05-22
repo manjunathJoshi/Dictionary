@@ -1,0 +1,28 @@
+<mat-card>
+  <div class="row bookmark">
+    <div class="col-sm-10">
+        <mat-icon mat-list-icon>bookmark</mat-icon>
+        <mat-label >Bookmarks</mat-label>
+    </div>
+  <div class="col-cm-2">
+      <button mat-icon-button matTooltip="Clear All" (click)="clearAll()">
+          <mat-icon mat-list-icon>clear_all</mat-icon>
+        </button> 
+  </div>
+  </div>
+  <mat-card>
+      <mat-label >Total Bookmarks: {{bookmarks.length}}</mat-label>
+
+  </mat-card>
+</mat-card>
+  <div class="bookmark-list">
+      <mat-list *ngFor="let item of bookmarks;let i = index">
+          <mat-list-item>
+            <mat-list-item role="listitem">{{item}}</mat-list-item>
+            <button mat-icon-button (click)="removeItem(i)">
+              <mat-icon>remove</mat-icon>
+            </button>   
+             <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+  </div>

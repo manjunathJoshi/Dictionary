@@ -1,0 +1,50 @@
+<div class="main">
+  <div class="row">
+    <div class="col-sm-12">
+      <mat-card style="margin-bottom: 10px">
+        <div class="flex-container alphabet">
+          <div *ngFor="let item of alpahabetArray" matRipple (click)="getAlphabetic(item)">{{item}}</div>
+        </div>
+      </mat-card>	
+      <div class="row">
+        <div class="col-sm-8 mb-10 addbutton">
+            <button mat-flat-button	(click)="openDialog()">
+                <mat-label>Add Words</mat-label>
+              </button>
+          </div>
+        <div class="col-sm-4 mb-10">
+          <input type="text" class="form-control" (keyup)="searchData()" [(ngModel)]="searchQuery" name="searchQuery"
+            placeholder="Search" />
+        </div>
+      </div>
+
+      <mat-card class="card ticket-card">
+        <table class="table table-responsive content-table">
+          <tr>
+            <th class="word">
+              <span>Word</span>
+            </th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+          <tbody>
+            <tr *ngFor="let item of data">
+              <td class="word">{{ item.word }}</td>
+              <td>{{ item.description }}</td>
+              <td class="actions">
+                <button mat-icon-button (click)="copyText(item.audio_url)">
+                  <mat-icon style="color:#780099">volume_up</mat-icon>
+                </button>
+                <button mat-icon-button (click)="addBookmarks(item.word)">
+                  <mat-icon style="color:#780099" matTooltip="Add to Bookmarks">add</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
