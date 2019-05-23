@@ -19,6 +19,7 @@ export class ContentComponent implements OnInit {
   public queryData:any;
   public bookmarkItem:any=[];
   public alpahabetArray=[];
+  public originalData;
 
   constructor(public dictionaryService: DictionaryService,private snackBar:MatSnackBar,public dialog: MatDialog) { }
   ngOnInit() {
@@ -26,6 +27,7 @@ export class ContentComponent implements OnInit {
     this.dictionaryService.getData().subscribe(
       (data) => {
         this.data = Object.values(data)
+        this.originalData = this.data[0];
         this.data = this.data[0] || [];
         this.queryData = this.data;
       });
@@ -91,5 +93,8 @@ export class ContentComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.animal = result;
     });
+  }
+  reset(){
+    this.data = this.originalData;
   }
 }
