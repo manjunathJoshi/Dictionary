@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
+A mini dictionary project with some of words and their meaning including the audio feature.
+
+built with ANGULAR MATERIAL.
+ Features include 
+ 1. Responsive design
+ 2. Add more words
+ 3. Add audio file url to that word
+ 4. search 
+ 5. bookmark a word
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
